@@ -1,10 +1,10 @@
-# 🛒 Sorta
+# Sorta
 
 **Sorta** is a sleek, minimalist shopping list app built for simplicity and control. Designed for both **web** and **mobile**, Sorta helps users organize items by **category** (e.g., groceries, cosmetics, clothing) and **store** (e.g., Target, Amazon, local shops) — all with just a few taps.
 
 ---
 
-## ✨ Features (Frontend MVP)
+## Features (Frontend MVP)
 
 - **Category View**  
   Quickly browse your saved items by category (Groceries, Clothing, etc.).
@@ -46,7 +46,7 @@
 
 ---
 
-## 🛠️ Tech Stack (Planned)
+## Tech Stack (Planned)
 
 - **Frontend**: React (Web), React Native or Flutter (Mobile)
 - **Styling**: Tailwind CSS or Styled Components
@@ -77,7 +77,7 @@ This is an early-stage frontend build. Backend logic and data persistence will b
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests are welcome! If you'd like to contribute to Sorta's design, components, or logic, please open an issue or fork the repo.
 
