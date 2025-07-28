@@ -30,22 +30,6 @@
 
 ---
 
-## Project Structure (Planned)
-
-    /sorta/
-    ├── public/ # Static assets
-    ├── src/
-    │ ├── components/ # Reusable UI components
-    │ ├── screens/ # Home, CategoryView, StoreView, AddItem
-    │ ├── assets/ # Icons, logos
-    │ ├── App.jsx # App entry point
-    │ └── styles/ # Global styles or Tailwind config
-    ├── package.json
-    └── README.md
-
-
----
-
 ## Tech Stack (Planned)
 
 - **Frontend**: React (Web), React Native or Flutter (Mobile)
