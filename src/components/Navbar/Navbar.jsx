@@ -13,7 +13,7 @@ const Navbar = ({ currentTab, setCurrentTab }) => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <span
-          onClick={() => setCurrentTab('All Items')}
+          onClick={() => setCurrentTab('Home')}
           className="text-xl font-semibold font-mono text-gray-800 hover:text-blue-600 flex items-center cursor-pointer"
         >
           <i className="fa-solid fa-list-check pr-2 text-blue-500"></i>
@@ -33,6 +33,12 @@ const Navbar = ({ currentTab, setCurrentTab }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-mono text-sm">
+        <span onClick={() => setCurrentTab('Home')} className={linkStyle('Home')}>
+            Home
+          </span>
+          <span onClick={() => setCurrentTab('All Items')} className={linkStyle('All Items')}>
+            All Items
+          </span>
           <span onClick={() => setCurrentTab('Category')} className={linkStyle('Category')}>
             Category
           </span>
@@ -48,6 +54,12 @@ const Navbar = ({ currentTab, setCurrentTab }) => {
       {/* Mobile Menu Dropdown */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4 font-mono bg-white border-t shadow">
+          <span onClick={() => { setCurrentTab('Home'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
+            Home
+          </span>
+          <span onClick={() => { setCurrentTab('All Items'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
+            All Items
+          </span>
           <span onClick={() => { setCurrentTab('Category'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
             Category
           </span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/app-pic.png';
+import heroImage from '../../assets/app-pic.png'; // Correct relative path
 
 function Hero() {
   return (
