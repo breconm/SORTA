@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Navbar = ({ currentTab, setCurrentTab }) => {
+const Navbar = ({ currentTab, setCurrentTab, isLoggedIn }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkStyle = (tabName) =>
@@ -33,47 +33,53 @@ const Navbar = ({ currentTab, setCurrentTab }) => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-mono text-sm">
-        <span onClick={() => setCurrentTab('Home')} className={linkStyle('Home')}>
+          <span onClick={() => setCurrentTab('Home')} className={linkStyle('Home')}>
             Home
           </span>
-          <span onClick={() => setCurrentTab('All Items')} className={linkStyle('All Items')}>
-            All Items
-          </span>
-          <span onClick={() => setCurrentTab('Category')} className={linkStyle('Category')}>
-            Category
-          </span>
-          <span onClick={() => setCurrentTab('Store')} className={linkStyle('Store')}>
-            Store
-          </span>
-          <span onClick={() => setCurrentTab('Add Item')} className={linkStyle('Add Item')}>
-            Add Item
-          </span>
+          {isLoggedIn ? (
+            <>
+              <span onClick={() => setCurrentTab('Add Item')} className={linkStyle('Add Item')}>
+                Add Item
+              </span>
+              <span onClick={() => setCurrentTab('Category')} className={linkStyle('Category')}>
+                Category
+              </span>
+              <span onClick={() => setCurrentTab('Store')} className={linkStyle('Store')}>
+                Store
+              </span>
+              <span onClick={() => setCurrentTab('Settings')} className={linkStyle('Settings')}>
+                Settings
+              </span>
+              <span onClick={() => setCurrentTab('About')} className={linkStyle('About')}>
+                About
+              </span>
+              <span onClick={() => setCurrentTab('Contact')} className={linkStyle('Contact')}>
+                Contact
+              </span>
+              <span onClick={() => setCurrentTab('Logout')} className={linkStyle('Logout')}>
+                Sign Out
+              </span>
+            </>
+          ) : (
+            <>
+              <span onClick={() => setCurrentTab('About')} className={linkStyle('About')}>
+                About
+              </span>
+              <span onClick={() => setCurrentTab('Contact')} className={linkStyle('Contact')}>
+                Contact
+              </span>
+              <span onClick={() => setCurrentTab('Signup')} className={linkStyle('Signup')}>
+                Sign Up
+              </span>
+              <span onClick={() => setCurrentTab('Login')} className={linkStyle('Login')}>
+                Login
+              </span>
+            </>
+          )}
         </div>
       </div>
-
-      {/* Mobile Menu Dropdown */}
-      {menuOpen && (
-        <div className="md:hidden px-6 pb-4 font-mono bg-white border-t shadow">
-          <span onClick={() => { setCurrentTab('Home'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
-            Home
-          </span>
-          <span onClick={() => { setCurrentTab('All Items'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
-            All Items
-          </span>
-          <span onClick={() => { setCurrentTab('Category'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
-            Category
-          </span>
-          <span onClick={() => { setCurrentTab('Store'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
-            Store
-          </span>
-          <span onClick={() => { setCurrentTab('Add Item'); setMenuOpen(false); }} className="block py-2 hover:text-blue-600">
-            Add Item
-          </span>
-        </div>
-      )}
     </nav>
   );
 };
 
 export default Navbar;
-
