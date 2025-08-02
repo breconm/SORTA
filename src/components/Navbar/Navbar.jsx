@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 
-const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+const Navbar = ({ currentTab, setCurrentTab }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const tabs = ['All Items', 'Category', 'Store', 'Add Item'];
 
-    return (
-        <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-10">
+  const handleClick = (tab) => {
+    setCurrentTab(tab);
+    setMenuOpen(false); // Close mobile menu on selection
+  };
+
+  return (
+    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="text-xl font-semibold font-mono text-gray-800 hover:text-blue-600 flex items-center">
+        <button
+          onClick={() => handleClick('All Items')}
+          className="text-xl font-semibold font-mono text-gray-800 hover:text-blue-600 flex items-center"
+        >
           <i className="fa-solid fa-list-check pr-2 text-blue-500"></i>
           SORTA
-        </a>
+        </button>
 
-        {/* Hamburger icon (mobile only) */}
+        {/* Hamburger icon */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -25,21 +34,38 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 font-mono text-sm">
-          <a href="#" className="hover:text-blue-600">Category</a>
-          <a href="#" className="hover:text-blue-600">Store</a>
-          <a href="#" className="hover:text-blue-600">Add Item</a>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => handleClick(tab)}
+              className={`hover:text-blue-600 ${
+                currentTab === tab ? 'text-blue-600 font-bold' : 'text-gray-700'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4 font-mono bg-white border-t shadow">
-          <a href="#" className="block py-2 hover:text-blue-600">Category</a>
-          <a href="#" className="block py-2 hover:text-blue-600">Store</a>
-          <a href="#" className="block py-2 hover:text-blue-600">Add Item</a>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => handleClick(tab)}
+              className={`block py-2 text-left w-full ${
+                currentTab === tab ? 'text-blue-600 font-bold' : 'text-gray-700'
+              } hover:text-blue-600`}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       )}
     </nav>
-      );
-    };
-export default Navbar
+  );
+};
+
+export default Navbar;
