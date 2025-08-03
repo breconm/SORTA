@@ -6,7 +6,7 @@ function Hero() {
   const navigate = useNavigate(); // Hook for navigation
 
   return (
-    <section className="pt-28 pb-20 px-6 bg-gradient-to-br from-blue-100 via-white to-purple-100 min-h-[80vh]">
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-6">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* Text Content */}
         <div className="text-center md:text-left md:w-1/2">
