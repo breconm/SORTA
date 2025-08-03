@@ -1,0 +1,48 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import heroImage from '../../assets/app-pic.png'; // Correct relative path
+
+function Hero() {
+  const navigate = useNavigate(); // Hook for navigation
+
+  return (
+    <section className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+        {/* Text Content */}
+        <div className="text-center md:text-left md:w-1/2">
+          <h1 className="text-4xl sm:text-5xl font-semibold text-gray-800 leading-tight">
+            Organize your shopping —<br className="hidden sm:block" /> your way.
+          </h1>
+          <p className="mt-6 text-lg text-gray-600 max-w-md mx-auto md:mx-0">
+            Sorta helps you track what to buy by category or store. Clean, simple, and built for how you actually shop.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4 font-mono">
+            <button
+              onClick={() => navigate('/login')} // Navigate to login page
+              className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition text-sm"
+            >
+              Get Started
+            </button>
+            <button
+              onClick={() => navigate('/about')} // Navigate to about page
+              className="border border-gray-300 text-gray-800 px-6 py-3 rounded-full hover:bg-gray-100 transition text-sm"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+
+        {/* Illustration */}
+        <div className="md:w-1/2">
+          <img
+            src={heroImage}
+            alt="Shopping categories and checklist"
+            className="w-full max-w-md mx-auto drop-shadow-md" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
