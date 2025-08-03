@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Login() {
+function Login({ setCurrentTab }) {
   return (
     <div className="login-page">
       <h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -11,6 +11,15 @@ function Login() {
           Login
         </button>
       </form>
+      <p className="mt-4 text-sm text-gray-600">
+        Don't have an account?{' '}
+        <span
+          onClick={() => setCurrentTab('Signup')}
+          className="text-blue-600 cursor-pointer hover:underline"
+        >
+          Sign up here
+        </span>
+      </p>
     </div>
   );
 }
