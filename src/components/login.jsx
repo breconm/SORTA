@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login({ setCurrentTab }) {
+function Login() {
+  const navigate = useNavigate(); // Hook for navigation
+
   return (
     <div className="login-page">
       <h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -14,7 +17,7 @@ function Login({ setCurrentTab }) {
       <p className="mt-4 text-sm text-gray-600">
         Don't have an account?{' '}
         <span
-          onClick={() => setCurrentTab('Signup')}
+          onClick={() => navigate('/signup')} // Navigate to signup page
           className="text-blue-600 cursor-pointer hover:underline"
         >
           Sign up here
