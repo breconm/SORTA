@@ -5,7 +5,8 @@ import Hero from './components/Hero/Hero.jsx';
 import Signup from './components/Signup.jsx';
 import Login from './components/Login.jsx';
 import Guest from './components/Guest.jsx';
-import About from './components/about.jsx'; // Import About component
+import About from './components/about.jsx';
+import Contact from './components/contact.jsx';
 import './App.css';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} /> {/* Render About component */}
-          <Route path="/contact" element={<p>📞 Contact information or form.</p>} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
     </Router>
