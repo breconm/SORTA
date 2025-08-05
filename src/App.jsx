@@ -19,10 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/guest" element={<Guest />} />
-          <Route path="/add-items" element={isLoggedIn ? <p>➕ Add a new item form here.</p> : <Login />} />
-          <Route path="/category" element={isLoggedIn ? <p>📂 Organize or view by category.</p> : <Login />} />
-          <Route path="/store" element={isLoggedIn ? <p>🏬 View items by store.</p> : <Login />} />
-          <Route path="/settings" element={isLoggedIn ? <p>⚙️ User settings and preferences.</p> : <Login />} />
+          <Route path="/add-items" element={isLoggedIn ? <p> Add a new item form here.</p> : <Login />} />
+          <Route path="/category" element={isLoggedIn ? <p> Organize or view by category.</p> : <Login />} />
+          <Route path="/store" element={isLoggedIn ? <p> View items by store.</p> : <Login />} />
+          <Route path="/settings" element={isLoggedIn ? <p> User settings and preferences.</p> : <Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} /> {/* Render About component */}
