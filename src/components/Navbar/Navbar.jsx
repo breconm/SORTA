@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn }) => {
+const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu visibility
+
+  const toggleLogin = () => {
+    setIsLoggedIn(!isLoggedIn); // Toggle login state
+  };
 
   return (
     <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-10">
@@ -38,16 +43,25 @@ const Navbar = ({ isLoggedIn }) => {
           {isLoggedIn && (
             <>
               <Link to="/" className="hover:text-blue-600 text-gray-800">Home</Link>
+              <Link to="/profile" className="hover:text-blue-600 text-gray-800">Profile</Link>
+              <Link to="/user-settings" className="hover:text-blue-600 text-gray-800">Settings</Link>
               <Link to="/add-items" className="hover:text-blue-600 text-gray-800">Add Items</Link>
               <Link to="/category" className="hover:text-blue-600 text-gray-800">Category</Link>
               <Link to="/store" className="hover:text-blue-600 text-gray-800">Store</Link>
-              <Link to="/settings" className="hover:text-blue-600 text-gray-800">Settings</Link>
               <Link to="/about" className="hover:text-blue-600 text-gray-800">About</Link>
               <Link to="/contact" className="hover:text-blue-600 text-gray-800">Contact</Link>
               <Link to="/signout" className="hover:text-blue-600 text-gray-800">Sign Out</Link>
             </>
           )}
         </div>
+
+        {/* Login/Logout Button */}
+        <button
+          onClick={toggleLogin}
+          className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          {isLoggedIn ? 'Logout' : 'Login'}
+        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -65,10 +79,11 @@ const Navbar = ({ isLoggedIn }) => {
           {isLoggedIn && (
             <>
               <Link to="/" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Home</Link>
+              <Link to="/profile" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Profile</Link>
+              <Link to="/user-settings" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Settings</Link>
               <Link to="/add-items" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Add Items</Link>
               <Link to="/category" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Category</Link>
               <Link to="/store" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Store</Link>
-              <Link to="/settings" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Settings</Link>
               <Link to="/about" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>About</Link>
               <Link to="/contact" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Contact</Link>
               <Link to="/signout" className="block hover:text-blue-600 text-gray-800" onClick={() => setMenuOpen(false)}>Sign Out</Link>
