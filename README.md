@@ -1,6 +1,6 @@
-# Sorta
+# Sorted
 
-**Sorta** is a sleek, minimalist shopping list app built for simplicity and control. Designed for both **web** and **mobile**, Sorta helps users organize items by **category** (e.g., groceries, cosmetics, clothing) and **store** (e.g., Target, Amazon, local shops) — all with just a few taps.
+**Sorted** is a sleek, minimalist shopping list app built for simplicity and control. Designed for both **web** and **mobile**, Sorta helps users organize items by **category** (e.g., groceries, cosmetics, clothing) and **store** (e.g., Target, Amazon, local shops) — all with just a few taps.
 
 ---
 
@@ -63,7 +63,7 @@ This is an early-stage frontend build. Backend logic and data persistence will b
 
 ## Contributing
 
-Pull requests are welcome! If you'd like to contribute to Sorta's design, components, or logic, please open an issue or fork the repo.
+Pull requests are welcome! If you'd like to contribute to Sorted's design, components, or logic, please open an issue or fork the repo.
 
 ---
 
@@ -75,6 +75,6 @@ Pull requests are welcome! If you'd like to contribute to Sorta's design, compon
 
 ## Inspiration
 
-Sorta was built to solve a simple problem: keep your shopping life organized without the clutter. Inspired by modern tools and minimalist UX design.
+Sorted is built to solve a simple problem: keep your shopping life organized without the clutter. Inspired by modern tools and minimalist UX design.
 
 ---
