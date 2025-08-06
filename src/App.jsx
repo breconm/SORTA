@@ -9,6 +9,8 @@ import About from './components/about.jsx';
 import Contact from './components/contact.jsx';
 import Profile from './components/Profile.jsx';
 import UserSettings from './components/user-settings.jsx';
+import AddItem from './components/add-items.jsx';
+import Category from './components/category.jsx';
 import './App.css';
 
 function App() {
@@ -25,8 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/guest" element={<Guest />} />
-          <Route path="/add-items" element={isLoggedIn ? <p>Add a new item form here.</p> : <Login />} />
-          <Route path="/category" element={isLoggedIn ? <p>Organize or view by category.</p> : <Login />} />
+          <Route path="/add-items" element={isLoggedIn ? <AddItem /> : <Login />} /> {/* Render AddItem */}
+          <Route path="/category" element={isLoggedIn ? <Category /> : <Login />} /> {/* Render categories */}
           <Route path="/store" element={isLoggedIn ? <p>View items by store.</p> : <Login />} />
           <Route path="/profile" element={isLoggedIn ? <Profile /> : <Login />} />
           <Route path="/user-settings" element={isLoggedIn ? <UserSettings /> : <Login />} />
