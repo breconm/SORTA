@@ -15,7 +15,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="text-xl font-semibold font-mono text-gray-800 hover:text-blue-600 flex items-center">
           <i className="fa-solid fa-list-check pr-2 text-blue-500"></i>
-          SORTA
+          SORTed
         </Link>
 
         {/* Hamburger icon (mobile only) */}
