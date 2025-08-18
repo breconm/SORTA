@@ -11,6 +11,7 @@ import Profile from './components/Profile.jsx';
 import UserSettings from './components/user-settings.jsx';
 import AddItem from './components/add-items.jsx';
 import Category from './components/category.jsx';
+import ItemDetails from './components/itemdetails.jsx';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/guest" element={<Guest />} />
           <Route path="/add-items" element={isLoggedIn ? <AddItem /> : <Login />} /> {/* Render AddItem */}
+          <Route path="/item/:id" element={<ItemDetails />} /> {/* Render ItemDetails */}
           <Route path="/category" element={isLoggedIn ? <Category /> : <Login />} /> {/* Render categories */}
           <Route path="/store" element={isLoggedIn ? <p>View items by store.</p> : <Login />} />
           <Route path="/profile" element={isLoggedIn ? <Profile /> : <Login />} />
